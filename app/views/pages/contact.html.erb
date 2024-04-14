@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - My Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+        header {
+            background: #005691;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+        form {
+            flex-basis: 45%;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #005691;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        input[type="submit"]:hover {
+            background-color: #003f6f;
+        }
+        .contact-info {
+            flex-basis: 45%;
+            padding: 20px;
+        }
+        .contact-info h2 {
+            margin-top: 0;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 20px;
+            background: #2c3e50;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contact Me</h1>
+        <nav>
+            <%= link_to 'Home', root_path %> |
+            <%= link_to 'About Me', about_path %> |
+            <%= link_to 'My Work', work_path %> |
+            <%= link_to 'Contact Me', contact_path, class: 'active' %>
+        </nav>
+    </header>
+    <section>
+        <form action="submit_contact_info" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <input type="submit" value="Send">
+        </form>
+        <div class="contact-info">
+            <h2>Ways to Reach Me</h2>
+            <p>Email: alren@memphis.edu</p>
+            <p>Phone: 347-725-9261</p>
+          
+        </div>
+    </section>
+    <footer>
+        <p>Thank you for visiting my portfolio. I look forward to connecting with you!</p>
+    </footer>
+</body>
+</html>

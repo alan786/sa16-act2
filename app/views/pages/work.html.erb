@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Work - My Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+        header {
+            background: #005691;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .project {
+            background: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            width: 30%;
+            margin: 10px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        .project:hover {
+            transform: scale(1.05);
+        }
+        .project img {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+            height: 200px;
+            object-fit: cover;
+        }
+        .project h3 {
+            margin: 10px 0;
+            color: #005691;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 20px;
+            background: #2c3e50;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Work</h1>
+        <nav>
+            <%= link_to 'Home', root_path %> |
+            <%= link_to 'About Me', about_path %> |
+            <%= link_to 'My Work', work_path, class: 'active' %> |
+            <%= link_to 'Contact Me', contact_path %>
+        </nav>
+    </header>
+    <div class="projects">
+        <div class="project">
+            <%= image_tag "socket.jpeg", alt: "Chatbox" %>
+            <h3>Chatbox</h3>
+            <p>This project involved building a responsive web application using socket programming.</p>
+        </div>
+        <div class="project">
+            <%= image_tag "auction.jpeg", alt: "Auction" %>
+            <h3>Auction</h3>
+            <p>An auction platform designed with Ruby on Rails, featuring  bid and payment gateway integration.</p>
+        </div>
+    </div>
+    <footer>
+        <p>Explore the projects to see the quality and diversity of my work. Reach out if you want more detailed information!</p>
+    </footer>
+</body>
+</html>
+
