@@ -78,6 +78,12 @@
             background: #2c3e50;
             color: #ffffff;
         }
+        .thank-you-message {
+            display: none;
+            color: green;
+            font-size: 18px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -91,7 +97,7 @@
         </nav>
     </header>
     <section>
-        <form action="submit_contact_info" method="post">
+        <form id="contactForm">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             
@@ -102,6 +108,7 @@
             <textarea id="message" name="message" rows="4" required></textarea>
             
             <input type="submit" value="Send">
+            <div class="thank-you-message" id="thankYouMessage">Thank you for your message!</div>
         </form>
         <div class="contact-info">
             <h2>Ways to Reach Me</h2>
@@ -113,5 +120,16 @@
     <footer>
         <p>Thank you for visiting my portfolio. I look forward to connecting with you!</p>
     </footer>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting through the HTTP POST method
+            var thankYouMessage = document.getElementById('thankYouMessage');
+            thankYouMessage.style.display = 'block'; // Show the thank-you message
+            
+        });
+    </script>
 </body>
 </html>
+
+
+

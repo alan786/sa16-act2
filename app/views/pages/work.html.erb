@@ -42,6 +42,7 @@
             margin: 10px;
             padding: 20px;
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
         .project:hover {
             transform: scale(1.05);
@@ -83,12 +84,23 @@
         <div class="project">
             <%= image_tag "auction.jpeg", alt: "Auction" %>
             <h3>Auction</h3>
-            <p>An auction platform designed with Ruby on Rails, featuring  bid and payment gateway integration.</p>
+            <p>An auction platform designed with Ruby on Rails, featuring bid and payment gateway integration.</p>
         </div>
     </div>
     <footer>
         <p>Explore the projects to see the quality and diversity of my work. Reach out if you want more detailed information!</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const projects = document.querySelectorAll('.project');
+            projects.forEach(project => {
+                project.addEventListener('click', function() {
+                    alert("Learn more about this project: " + this.querySelector('h3').textContent);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
+
 

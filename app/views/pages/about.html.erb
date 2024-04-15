@@ -34,6 +34,7 @@
             background: #ffffff;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             border-radius: 8px;
+            transition: background-color 0.5s;
         }
         footer {
             text-align: center;
@@ -56,6 +57,16 @@
         .bio h2 {
             margin-top: 20px;
         }
+        .toggle-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -63,9 +74,9 @@
         <h1>About Me</h1>
         <nav>
             <%= link_to 'Home', root_path %> |
-            <%= link_to 'About Me', about_path, class: 'active' %> |
+            <%= link_to 'About Me', about_path %> |
             <%= link_to 'My Work', work_path %> |
-            <%= link_to 'Contact Me', contact_path %>
+            <%= link_to 'Contact Me', contact_path, class: 'active' %>
         </nav>
     </header>
     <section class="bio">
@@ -73,10 +84,19 @@
         <p>Hello! I'm Alan, a passionate Web Developer dedicated to building innovative and efficient solutions for various digital platforms. With a deep-rooted love for coding and a keen eye for detail, I have developed a broad skill set in both front-end and back-end technologies.</p>
         <p>My academic background in Computer Science has enabled me to effectively tackle challenges and continuously improve my craft. Over the years, I have had the opportunity to work on numerous projects that have not only tested my abilities but have also fueled my passion for learning and growth in this ever-evolving field.</p>
         <p>Outside of coding, I enjoy contributing to open-source projects, engaging with the developer community, and sharing knowledge through blogging about the latest technological trends.</p>
+        <button class="toggle-button" onclick="toggleMode()">Toggle Night Mode</button>
     </section>
     <footer>
         <p>Thank you for visiting my portfolio! Feel free to reach out if you have any questions or need further information.</p>
     </footer>
+    <script>
+        function toggleMode() {
+            const section = document.querySelector('.bio');
+            section.style.backgroundColor = section.style.backgroundColor === 'rgb(34, 34, 34)' ? '#ffffff' : 'rgb(34, 34, 34)';
+            section.style.color = section.style.color === 'rgb(255, 255, 255)' ? '#333' : 'rgb(255, 255, 255)';
+        }
+    </script>
 </body>
 </html>
+
 
